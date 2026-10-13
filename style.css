@@ -1,0 +1,72 @@
+body {
+  background-color: white;
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: black;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.photo-frame {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  border: 50px solid #000;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo-text {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 0;
+  font-family: 'Edu QLD Hand', cursive;
+  text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  animation: shadow-dance 2s infinite;
+}
+
+@keyframes shadow-dance {
+  0%, 100% {
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  }
+  50% {
+    text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+  }
+}
+
+.cat {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 130px;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 9999;
+  background: transparent;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  transform: translate(-50%, -50%);
+}
+
+.cat.idle {
+  opacity: 0.8;
+}
